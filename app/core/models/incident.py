@@ -13,7 +13,7 @@ class Incident(Base):
     text: Mapped[str] = mapped_column(nullable=False)
     status: Mapped[str] = mapped_column(nullable=False, default="open")
     source: Mapped[str] = mapped_column(nullable=False)
-    created: Mapped[datetime] = mapped_column(nullable=False, server_default=func.now())
+    created_at: Mapped[datetime] = mapped_column(nullable=False, server_default=func.now())
 
     __table_args__ = (
         CheckConstraint(
